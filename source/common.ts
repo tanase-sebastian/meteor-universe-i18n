@@ -122,7 +122,7 @@ const i18n = {
     const translation = args.pop() as JSONObject;
     const path = args.join('.').replace(/(^\.)|(\.\.)|(\.$)/g, '');
 
-    if (typeof translation === 'string') {
+    if (typeof translation === 'string' || Array.isArray(translation)) {
       set(i18n._translations, `${i18n.normalize(locale)}.${path}`, translation);
     } else if (typeof translation === 'object' && !!translation) {
       Object.keys(translation)
