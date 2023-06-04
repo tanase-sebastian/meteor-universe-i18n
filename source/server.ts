@@ -206,7 +206,7 @@ WebApp.connectHandlers.use('/universe/locale/', ((request, response, next) => {
     },
   } = URL.parse(request.url || '', true);
 
-  if (type && !['js', 'js', 'yml'].includes(type as string)) {
+  if (type && !['js', 'json', 'yml'].includes(type as string)) {
     response.writeHead(415);
     response.end();
     return;
